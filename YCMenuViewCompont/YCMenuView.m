@@ -430,14 +430,6 @@ static NSString *const menuCellID = @"YCMenuCell";
     cell.imageView.image = action.image?action.image:nil;
     
     cell.isShowSeparator = !(indexPath.row == _actions.count - 1);
-//
-//    if (indexPath.row == _actions.count - 1) {
-//        cell.isShowSeparator = NO;
-//    }
-//    else
-//    {
-//
-//    }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

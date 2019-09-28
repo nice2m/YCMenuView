@@ -8,7 +8,6 @@
 
 #import "TestViewController.h"
 #import "YCMenuView.h"
-//#import "NSBundle+debugClassInfo.h"
 
 @interface TestViewController ()
 @property(nonatomic,strong)NSArray      *arr;
@@ -40,13 +39,6 @@
     }];
     
     self.arr = @[action,action1,action2,action3,action4,action,action1,action2];
-
-#pragma mark - Debug
-//
-//    [[NSBundle nt_classMethodList:@"UITableViewCell"] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            //
-//        NSLog(@"UITableViewCellMethod:%@",obj);
-//    }];
 }
 
 - (void)didReceiveMemoryWarning {
