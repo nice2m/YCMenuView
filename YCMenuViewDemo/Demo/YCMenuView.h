@@ -14,7 +14,9 @@
 //默认倒角   default = 5.0
 @property (nonatomic,assign) CGFloat                        cornerRaius;
 //设置分割线颜色 default = 灰色
-@property (nonatomic,strong) UIColor                       *separatorColor;
+//@property (nonatomic,strong) UIColor                       *separatorColor;
+@property (nonatomic,strong) UIColor                       *menueSeparatorColor;
+
 //设置菜单颜色  default = 白色（也可以通过BackgroundColor设置）
 @property (nonatomic,strong) UIColor                       *menuColor;
 //设置菜单单元格高度  default = 44

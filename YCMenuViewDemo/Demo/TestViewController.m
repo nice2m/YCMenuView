@@ -8,9 +8,12 @@
 
 #import "TestViewController.h"
 #import "YCMenuView.h"
+//#import "NSBundle+debugClassInfo.h"
+
 @interface TestViewController ()
 @property(nonatomic,strong)NSArray      *arr;
 @property(nonatomic,strong)YCMenuView   *mView;
+
 @end
 
 @implementation TestViewController
@@ -30,12 +33,20 @@
     }];
     YCMenuAction *action3 = [YCMenuAction actionWithTitle:@"搜索页" image:image handler:^(YCMenuAction *action) {
         NSLog(@"点击了%@",action.title);
+
     }];
     YCMenuAction *action4 = [YCMenuAction actionWithTitle:@"新闻页" image:image handler:^(YCMenuAction *action) {
         NSLog(@"点击了%@",action.title);
     }];
     
     self.arr = @[action,action1,action2,action3,action4,action,action1,action2];
+
+#pragma mark - Debug
+//
+//    [[NSBundle nt_classMethodList:@"UITableViewCell"] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            //
+//        NSLog(@"UITableViewCellMethod:%@",obj);
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +64,8 @@
     
     // 自定义设置
     view.menuColor = [UIColor whiteColor];
-    view.separatorColor = [UIColor whiteColor];
+    view.menueSeparatorColor = [UIColor purpleColor];
+
     view.maxDisplayCount = 20;
     view.offset = 100;
     view.textColor = [UIColor blueColor];
@@ -70,7 +82,6 @@
 - (IBAction)buttonItemClick:(UIBarButtonItem *)sender {
     YCMenuView *view = [YCMenuView menuWithActions:self.arr width:140 relyonView:sender];
     view.maxDisplayCount = 7;
-
     [view show];
 
     self.mView = view;
