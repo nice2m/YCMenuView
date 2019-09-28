@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7721E1C3233F089100952989 /* NSBundle+debugClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7721E1C1233F089100952989 /* NSBundle+debugClassInfo.m */; };
 		E5160E392137967000EE6A44 /* YCMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5160E372137967000EE6A44 /* YCMenuView.m */; };
 		E5160E3C2137968000EE6A44 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5160E3B2137968000EE6A44 /* TestViewController.m */; };
 		E5DE2D6F20AE59A300CA20B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DE2D6E20AE59A300CA20B1 /* AppDelegate.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7721E1C1233F089100952989 /* NSBundle+debugClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+debugClassInfo.m"; sourceTree = "<group>"; };
+		7721E1C2233F089100952989 /* NSBundle+debugClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+debugClassInfo.h"; sourceTree = "<group>"; };
 		E5160E372137967000EE6A44 /* YCMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCMenuView.m; sourceTree = "<group>"; };
 		E5160E382137967000EE6A44 /* YCMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCMenuView.h; sourceTree = "<group>"; };
 		E5160E3A2137967F00EE6A44 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
@@ -45,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7721E1BA233F056D00952989 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				7721E1C2233F089100952989 /* NSBundle+debugClassInfo.h */,
+				7721E1C1233F089100952989 /* NSBundle+debugClassInfo.m */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		E5DE2D6120AE59A300CA20B1 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +76,7 @@
 		E5DE2D6C20AE59A300CA20B1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7721E1BA233F056D00952989 /* Debug */,
 				E5160E382137967000EE6A44 /* YCMenuView.h */,
 				E5160E372137967000EE6A44 /* YCMenuView.m */,
 				E5160E3A2137967F00EE6A44 /* TestViewController.h */,
@@ -157,6 +170,7 @@
 				E5DE2D6F20AE59A300CA20B1 /* AppDelegate.m in Sources */,
 				E5160E392137967000EE6A44 /* YCMenuView.m in Sources */,
 				E5160E3C2137968000EE6A44 /* TestViewController.m in Sources */,
+				7721E1C3233F089100952989 /* NSBundle+debugClassInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +305,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S6X943LZML;
+				DEVELOPMENT_TEAM = N6825EKA6L;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ylz.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ylz.Demo--d";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,10 +319,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S6X943LZML;
+				DEVELOPMENT_TEAM = N6825EKA6L;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ylz.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ylz.Demo--d";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

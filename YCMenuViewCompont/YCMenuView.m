@@ -117,20 +117,26 @@
 
 @interface YCMenuCell : UITableViewCell
 @property (nonatomic,assign) BOOL         isShowSeparator;
-@property (nonatomic,strong) UIColor    * separatorColor;
+@property (nonatomic,strong) UIColor     *menueSeparatorColor;
 @end
 @implementation YCMenuCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _isShowSeparator = YES;
-        _separatorColor = [UIColor lightGrayColor];
+        _menueSeparatorColor = [UIColor redColor];
     }
     return self;
 }
 
-- (void)setSeparatorColor:(UIColor *)separatorColor{
-    _separatorColor = separatorColor;
-    [self setNeedsDisplay];
+//- (void)setSeparatorColor:(UIColor *)separatorColor{
+//    _separatorColor = separatorColor;
+//    [self setNeedsDisplay];
+//}
+// #8 bug fix  由于UITableViewCell父类 中已经存在setSeparatorColor: 方法，系统控件玄学，导致 _separatorColor不生效问题，所以此处修改方法名
+- (void)setMenueSeparatorColor:(UIColor *)menueSeparatorColor
+{
+    _menueSeparatorColor = menueSeparatorColor;
+    [self setNeedsLayout];
 }
 - (void)setIsShowSeparator:(BOOL)isShowSeparator{
     _isShowSeparator = isShowSeparator;
@@ -139,7 +145,7 @@
 - (void)drawRect:(CGRect)rect{
     if (!_isShowSeparator)return;
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, rect.size.height - 0.5, rect.size.width, 0.5)];
-    [_separatorColor setFill];
+    [_menueSeparatorColor setFill];
     [path fillWithBlendMode:kCGBlendModeNormal alpha:1.0f];
     [path closePath];
 }
@@ -233,7 +239,7 @@ static NSString *const menuCellID = @"YCMenuCell";
     [self setDefaultShadow];
     
     _cornerRaius = 5.0f;
-    _separatorColor = [UIColor blackColor];
+    _menueSeparatorColor = [UIColor blackColor];
     _menuColor = [UIColor whiteColor];
     _menuCellHeight = 44.0f;
     _maxDisplayCount = 5;
@@ -420,12 +426,18 @@ static NSString *const menuCellID = @"YCMenuCell";
     cell.textLabel.font = _textFont;
     cell.textLabel.textColor = _textColor;
     cell.textLabel.text = action.title;
-    cell.separatorColor = _separatorColor;
+    cell.menueSeparatorColor = _menueSeparatorColor;
     cell.imageView.image = action.image?action.image:nil;
     
-    if (indexPath.row == _actions.count - 1) {
-        cell.isShowSeparator = NO;
-    }
+    cell.isShowSeparator = !(indexPath.row == _actions.count - 1);
+//
+//    if (indexPath.row == _actions.count - 1) {
+//        cell.isShowSeparator = NO;
+//    }
+//    else
+//    {
+//
+//    }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -488,9 +500,15 @@ static NSString *const menuCellID = @"YCMenuCell";
     _menuColor = backgroundColor;
     self.contentView.backgroundColor = _menuColor;
 }
-- (void)setSeparatorColor:(UIColor *)separatorColor{
-    if ([_separatorColor isEqual:separatorColor]) return;
-    _separatorColor = separatorColor;
+//- (void)setSeparatorColor:(UIColor *)separatorColor{
+//    if ([_separatorColor isEqual:separatorColor]) return;
+//    _separatorColor = separatorColor;
+//    [self.tableView reloadData];
+//}
+- (void)setMenueSeparatorColor:(UIColor *)menueSeparatorColor
+{
+    if ([_menueSeparatorColor isEqual:menueSeparatorColor]) return;
+    _menueSeparatorColor = menueSeparatorColor;
     [self.tableView reloadData];
 }
 - (void)setMenuCellHeight:(CGFloat)menuCellHeight{
